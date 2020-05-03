@@ -1,4 +1,4 @@
-# react-lazyload（https://github.com/twobin/react-lazyload）を利用した遅延読み込みの実装
+# react-lazyload を利用した遅延読み込みの実装
 
 ①npm からインストール。
 npm install --save react-lazyload
@@ -15,3 +15,7 @@ const Index = (props) => (
 </LazyLoad>
 // 略
 ```
+
+# react-lazyload の URL
+
+https://github.com/twobin/react-lazyload
