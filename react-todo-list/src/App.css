@@ -1,0 +1,29 @@
+.app {
+  max-width: 800px;
+  margin: auto;
+}
+
+.app-form {
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #aaa;
+}
+.app-form > * {
+  width: 100%;
+  display: block;
+  margin-top: 1.5em;
+  box-sizing: border-box;
+}
+.app-form > input {
+  padding: 2px 10px;
+  height: 30px;
+}
+.app-form > textarea {
+  padding: 10px;
+  height: 80px;
+  resize: none;
+}
+.app-form > button {
+  height: 30px;
+  cursor: pointer;
+}
