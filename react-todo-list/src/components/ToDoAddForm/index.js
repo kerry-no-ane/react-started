@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import "./index.css";
-
-const propTypes = {
-  addItem: PropTypes.func,
-};
 
 class ToDoAddForm extends Component {
   constructor(props) {
@@ -15,6 +10,10 @@ class ToDoAddForm extends Component {
   handleAddItem(e) {
     // formのデフォルトのイベントをキャンセル
     e.preventDefault();
+    if (!e.target.elements["title"].value) {
+      alert("タイトルを入力してください");
+      return;
+    }
 
     // 親に渡す値をセット
     const addData = {
@@ -37,11 +36,10 @@ class ToDoAddForm extends Component {
       <form className="add-form" onSubmit={(e) => this.handleAddItem(e)}>
         <input id="title" placeholder="タイトル" />
         <textarea id="description" placeholder="詳細" />
-        <input type="submit" value="登録" />
+        <button type="submit">登録</button>
       </form>
     );
   }
 }
 
-ToDoAddForm.propTypes = propTypes;
 export default ToDoAddForm;

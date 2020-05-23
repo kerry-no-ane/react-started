@@ -1,9 +1,7 @@
-.toDoList {
+.toDoListItem {
   list-style-type: none;
-}
-.toDoList li {
   border-bottom: solid 1px #000;
 }
-.toDoList li.done {
+.toDoListItem.done {
   color: #c0c0c0;
 }

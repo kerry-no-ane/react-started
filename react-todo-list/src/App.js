@@ -19,7 +19,7 @@ class App extends Component {
       },
       // stateの変更後に入力した値をlocalstrageに保存する
       () => {
-        // this.todoSetStrage();
+        this.todoSetStrage();
       }
     );
   };
@@ -45,7 +45,9 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <h1>ToDoリスト</h1>
+        <h1>
+          ToDoリスト<button>リスト全削除</button>
+        </h1>
 
         <ToDoAddForm
           addItem={(addData) => {
