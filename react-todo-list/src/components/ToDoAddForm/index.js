@@ -17,13 +17,13 @@ class ToDoAddForm extends Component {
     e.preventDefault();
 
     // 親に渡す値をセット
-    const todoData = {
+    const addData = {
       title: e.target.elements["title"].value,
       description: e.target.elements["description"].value,
     };
 
     // 親の処理を呼び出す
-    return this.props.addItem(todoData, this.initInput(e));
+    return this.props.addItem(addData, this.initInput(e));
   }
 
   // 入力エリアを初期化

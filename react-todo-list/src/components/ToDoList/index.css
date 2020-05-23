@@ -1,5 +1,5 @@
 .toDoList {
-  list-style-type: lower-roman;
+  list-style-type: none;
 }
 .toDoList li {
   border-bottom: solid 1px #000;

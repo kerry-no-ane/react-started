@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import classNames from "classnames";
-import "./ToDoListItem.css";
+import "./index.css";
 
-class ToDoListItem extends Component {
+class ToDoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,26 +16,28 @@ class ToDoListItem extends Component {
   }
 
   render() {
-    const { title, deleteFunc } = this.props;
-    const toDoListItem = classNames("toDoListItem", {
+    const { list } = this.props;
+    const toDoListItem = classNames({
       done: this.state.ischeck,
     });
 
     return (
       <ul className="toDoList">
-        <li className={toDoListItem}>
-          <input type="checkbox" onClick={this.handleCheckChange} />
-          <span>{title}</span>
-          <button
-            style={{ display: this.state.ischeck ? "initial" : "none" }}
-            onClick={deleteFunc}
-          >
-            削除
-          </button>
-        </li>
+        {list.map((todo, index) => (
+          <li key={index} className={toDoListItem}>
+            <input type="checkbox" onClick={this.handleCheckChange} />
+            <span>{todo.title}</span>
+            <button
+              style={{ display: this.state.ischeck ? "initial" : "none" }}
+              onClick={() => this.props.deleteItem(todo)}
+            >
+              削除
+            </button>
+          </li>
+        ))}
       </ul>
     );
   }
 }
 
-export default ToDoListItem;
+export default ToDoList;

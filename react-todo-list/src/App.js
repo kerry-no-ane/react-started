@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import ToDoAddForm from "./components/ToDoAddForm";
+import ToDoList from "./components/ToDoList";
 
 class App extends Component {
   // ToDoListをローカルストレージから取得。初期値は []
@@ -8,12 +9,12 @@ class App extends Component {
     todoList: JSON.parse(localStorage.getItem("todoList")) || [],
   };
   // リスト追加
-  handleAddItem = (todoData) => {
+  handleAddItem = (addData) => {
     this.setState(
       {
         todoList: this.state.todoList.concat({
-          title: todoData.title,
-          description: todoData.description,
+          title: addData.title,
+          description: addData.description,
         }),
       },
       // stateの変更後に入力した値をlocalstrageに保存する
@@ -22,6 +23,19 @@ class App extends Component {
       }
     );
   };
+
+  // リスト削除
+  handleDeleteItem(todo) {
+    this.setState(
+      {
+        todoList: this.state.todoList.filter((x) => x !== todo),
+      },
+      // stateの変更後に入力した値を空にする
+      () => {
+        this.todoSetStrage();
+      }
+    );
+  }
 
   // localStorageにtodoList stateを保存
   todoSetStrage = () => {
@@ -34,9 +48,13 @@ class App extends Component {
         <h1>ToDoリスト</h1>
 
         <ToDoAddForm
-          addItem={(todoData) => {
-            this.handleAddItem(todoData);
+          addItem={(addData) => {
+            this.handleAddItem(addData);
           }}
+        />
+        <ToDoList
+          list={this.state.todoList}
+          deleteItem={(todo) => this.handleDeleteItem(todo)}
         />
       </div>
     );
