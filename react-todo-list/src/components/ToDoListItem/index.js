@@ -24,12 +24,14 @@ class ToDoListItem extends Component {
     return (
       <>
         <li className={toDoListItem}>
-          <input
-            type="checkbox"
-            checked={this.state.ischeck}
-            onClick={this.handleCheckChange}
-          />
-          <span>{todoData.title}</span>
+          <label>
+            <input
+              type="checkbox"
+              checked={this.state.ischeck}
+              onClick={this.handleCheckChange}
+            />
+            <span>{todoData}</span>
+          </label>
           <button
             style={{ display: this.state.ischeck ? "initial" : "none" }}
             onClick={() =>

@@ -9,14 +9,9 @@
   margin-top: 1.5em;
   box-sizing: border-box;
 }
-#title {
+#todoText {
   padding: 2px 10px;
   height: 30px;
-}
-#description {
-  padding: 10px;
-  height: 80px;
-  resize: none;
 }
 .add-form > button {
   height: 30px;

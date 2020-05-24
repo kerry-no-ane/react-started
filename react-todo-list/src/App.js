@@ -12,10 +12,7 @@ class App extends Component {
   handleAddItem = (addData) => {
     this.setState(
       {
-        todoList: this.state.todoList.concat({
-          title: addData.title,
-          description: addData.description,
-        }),
+        todoList: this.state.todoList.concat(addData),
       },
       // stateの変更後に入力した値をlocalstrageに保存する
       () => {
