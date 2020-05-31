@@ -3,10 +3,10 @@ import ToDoListItem from "../ToDoListItem";
 
 class ToDoList extends Component {
   render() {
-    const { list } = this.props;
+    const { todoList } = this.props;
     return (
       <ul>
-        {list.map((todo, index) => (
+        {todoList.map((todo, index) => (
           <ToDoListItem
             key={index}
             todoData={todo}

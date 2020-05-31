@@ -8,6 +8,10 @@
 .toDoListItem.done {
   color: #c0c0c0;
 }
+.toDoListItem.done span {
+  text-decoration: line-through;
+}
+
 .toDoListItem label {
   flex-grow: 1;
   cursor: pointer;

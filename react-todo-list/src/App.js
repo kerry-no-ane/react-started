@@ -42,17 +42,16 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <h1>
-          ToDoリスト<button>リスト全削除</button>
-        </h1>
+        <h1>ToDoリスト</h1>
 
         <ToDoAddForm
+          todoList={this.state.todoList}
           addItem={(addData) => {
             this.handleAddItem(addData);
           }}
         />
         <ToDoList
-          list={this.state.todoList}
+          todoList={this.state.todoList}
           deleteItem={(todo) => this.handleDeleteItem(todo)}
         />
       </div>

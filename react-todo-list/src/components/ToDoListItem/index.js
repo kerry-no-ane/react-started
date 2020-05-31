@@ -8,10 +8,10 @@ class ToDoListItem extends Component {
     this.state = {
       ischeck: false,
     };
-    this.handleCheckChange = this.handleCheckChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleCheckChange(e) {
+  handleChange(e) {
     this.setState({ ischeck: e.target.checked });
   }
 
@@ -28,7 +28,7 @@ class ToDoListItem extends Component {
             <input
               type="checkbox"
               checked={this.state.ischeck}
-              onClick={this.handleCheckChange}
+              onChange={this.handleChange}
             />
             <span>{todoData}</span>
           </label>
