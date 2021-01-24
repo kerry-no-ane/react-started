@@ -2,7 +2,6 @@ import React from 'react';
 import {createStyles, makeStyles} from "@material-ui/core/styles";
 import List from '@material-ui/core/List';
 import { Chat } from './index'
-import { border } from '@material-ui/system';
 
 const useStyles = makeStyles(() =>
     createStyles({
