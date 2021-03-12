@@ -13,7 +13,8 @@ class App extends React.Component {
       currentId: "init",
       dataset: defaultDataset,
       open: false,
-      loader: false
+      loader: false,
+      isWaitButton: false
     }
     this.selectAnswer = this.selectAnswer.bind(this)
     this.handleClickOpen = this.handleClickOpen.bind(this)
@@ -39,7 +40,8 @@ class App extends React.Component {
       })
   
       this.setState({
-        chats: chats
+        chats: chats,
+        isWaitButton: true
       })
       setTimeout(() => this.delayAnswer(nextQuestionId), 500)
     }
@@ -56,7 +58,8 @@ class App extends React.Component {
       answers:this.state.dataset[nextQuestionId].answers,
       chats: chats,
       currentId: nextQuestionId,
-      loader: false
+      loader: false,
+      isWaitButton: false
     })
   }
   // 回答タイミングを遅らせることにより、チャット感を出す
@@ -89,7 +92,7 @@ class App extends React.Component {
       <section className="c-section">
         <div className="c-box">
           <Chats chats={this.state.chats} loader={this.state.loader}/>
-          <AnswersList answers={this.state.answers} select={this.selectAnswer} />
+          <AnswersList answers={this.state.answers} isWait={this.state.isWaitButton} select={this.selectAnswer} />
           <FormDialog open={this.state.open} handleClose={this.handleClose} />
         </div>
       </section>

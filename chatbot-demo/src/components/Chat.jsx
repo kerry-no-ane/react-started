@@ -12,13 +12,7 @@ const Chat = (props) => {
   return (
     <ListItem className={classes}>
       <ListItemAvatar>
-        {
-          isQuestion ? (
-            <Avatar alt="icon" src={Norurun} />
-          ) : (
-            <Avatar alt="icon" src={Nottechan} />
-          )
-        }
+        <Avatar alt="icon" src={isQuestion? Norurun: Nottechan} />
       </ListItemAvatar>
       <div className="p-chat__bubble">
         {props.text}
